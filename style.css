@@ -1,0 +1,600 @@
+@charset "UTF-8";
+/*ウィンドウ幅が901px以上の場合に適用するCSS*/
+@media screen and (min-width:901px)
+{
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #f6efd8;
+    }
+    
+    header {
+        overflow: hidden;
+    }
+    .top-background {
+        position: relative;
+    }
+    .top-background .background1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 85vw;
+        animation: second-move 2.5s linear;
+    }
+    @keyframes second-move {
+        0%  {clip-path: polygon(0 0, 100% 0%, 100% 0%, 0 0%);}
+        40% {clip-path: polygon(0 0, 100% 0%, 100% 0%, 0 0%);}
+        50% {clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 25%);}/*50％なので5秒後*/
+        70% {clip-path: polygon(0 0, 100% 0%, 100% 50%, 0 50%);}
+        100%{clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);}/*100％なので10秒後*/
+    }/*％で時間経過を示しセレクタのように記述する。*/
+
+    .top-background .background2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -2;
+        height: 68.7vw;
+        animation: width-move 2.5s linear;
+    }
+    @keyframes width-move {
+        0%  {clip-path: polygon(0 0, 100% 0%, 100% 0%, 0 0%);}
+        50% {clip-path: polygon(0 0, 100% 0%, 100% 50%, 0 50%);}/*50％なので5秒後*/
+        100%{clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);}/*100％なので10秒後*/
+    }/*％で時間経過を示しセレクタのように記述する。*/
+    .top-nav {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        opacity: 0;
+        padding-bottom: 1vw;
+        z-index: 100;
+    }
+    /*読み込んだら要素が出現*/
+    .top-nav {
+        animation-name:fadeUpAnime;
+        animation-duration: 1s;
+        animation-fill-mode:forwards;
+        opacity: 0;
+        animation-delay: 2s;
+    }
+    @keyframes fadeUpAnime{
+        from {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .top-image img:nth-child(1) {
+        animation-name:fadeUpAnime3;
+        animation-duration: 1s;
+        animation-fill-mode:forwards;
+        opacity: 0;
+        animation-delay: 2.5s;
+    }
+    @keyframes fadeUpAnime3{
+        from {
+            opacity: 0;
+            transform: translateX(-5%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .top-image img:nth-child(2) {
+        animation-name:fadeUpAnime2;
+        animation-duration: 1s;
+        animation-fill-mode:forwards;
+        opacity: 0;
+        animation-delay: 2.5s;
+    }
+    @keyframes fadeUpAnime2{
+        from {
+            opacity: 0;
+            transform: translateX(5%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    /*終了*/
+    .top-logo {
+        width: 17vw;
+        padding-top: 3.5vw;
+        padding-left: 6.5vw;
+    }
+    .top-logo a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    /*ハンバーガーメニュー消す*/
+    .hamburger-menu {
+        display: none;
+    }
+    .insta {
+        display: none;
+    }
+    /*終了*/
+    header nav {
+        margin-top: 5vw;
+        margin-left: 2vw;
+    }
+    header nav ul {
+        display: flex;
+    }
+    header nav ul li {
+        list-style-type: none;
+    }
+    header nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.3vw;
+        font-weight: 600;
+        margin-right: 2vw;
+    }
+    header nav ul li a img {
+        width: 1.6vw;
+    }
+    header nav ul li a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    .top-image {
+        display: flex;
+    }
+    .top-image img:nth-child(1) {
+        width: 30vw;
+        height: 16vw;
+        margin-top: 20vw;
+        margin-left: 15vw;
+    }
+    .top-image img:nth-child(2) {
+        width: 50vw;
+        margin-top: 6vw;
+    }
+    .cheese-logo {
+        display: flex;
+        margin-top: 5vw;
+        height: 20vw;
+        transition: 0.5s;
+    }
+    .cheese-logo img {
+        height: 100%;
+    }
+    /*メニュー部分*/
+     /*フェードイン　jqueryのcss*/
+    .menu {
+        /* 最初は非表示 */
+        transform: translateY(30px);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 1s, opacity 1s, visibility 1s;
+    }
+
+    
+    /* フェードイン時に入るクラス */
+    .is-fadein {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    /*終了*/
+    .menu-title {
+        margin-top: 10vw;
+        display: flex;
+    }
+    .menu-title h1 {
+         width: 15vw;
+        margin-left: 7vw;
+    }
+    .menu-title h1 img {
+        width: 100%;
+    }
+    .menu-slide {
+        width: 67vw;
+        margin-left: 3vw;
+        border-bottom: 0.2vw solid #fbc300;
+    }
+    .menu-content {
+        display: flex;
+        margin-left: 8vw;
+    }
+    .menu-box {
+        position: relative;
+        margin-top: 5vw;
+        width: 16vw;
+        margin-right: 1vw;
+    }
+    .menu-box img {
+        width: 100%;
+    }
+    .menu-box img:nth-child(2) {
+        position: absolute;
+        width: 2.6vw;
+        top: 1vw;
+        left: 1vw;
+    }
+    .menu-text {
+        margin-top: -3vw;
+    }
+    .menu-text p strong {
+        font-size: 1.3vw;
+        color: #000;
+    }
+    .menu-text p {
+        font-size: 1.6vw;
+        color: #f98a00;
+    }
+    .more-btn {
+        position: relative;
+        overflow: hidden;
+        width: 10vw;
+        border-radius: 100px;
+        background-color: #fff;
+        margin-left: auto;
+        margin-right: 3vw;
+        margin-top: 3vw;
+        transition: .6s;
+        z-index: 1;
+    }
+    .more-btn::before {
+        content: "";
+        width: 100%;
+        height: 300%;
+        position: absolute;
+        top: -50%;
+        left: 0;
+        z-index: -1;
+        background-color: #fbc300;
+        border-radius: 70% 70% 50% 50% / 0% 0% 100% 100% ;
+        transform: translateY(-100%);
+        transition: transform ease .6s;
+    }
+    .more-btn:hover::before {
+        transform: translateY(10%);
+    }
+    .more-btn a {
+        text-decoration: none;
+    }
+    .more-btn p {
+        line-height: 3em;
+        color: #fbc300;
+        text-align: center;
+        font-size: 1.1vw;
+        font-weight: 600;
+    }
+    .more-btn:hover p {
+        color: #fff;
+    }
+    .line {
+        position: relative;
+        margin-top: 8vw;
+        width: 88vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8vw;
+    }
+    .line img {
+        width: 100%;
+    }
+    .line img:nth-child(2) {
+        display: none;
+    }
+    .line .more-btn {
+        position: absolute;
+        bottom: 5vw;
+        right: 3vw;
+    }
+    
+    
+    
+    /*メニュー　jquery*/
+    .slider{
+        margin: 100px auto;
+        width: 90%;
+    }
+    .slider li {
+        position: relative;
+    }
+    .slider img{
+        height: auto;
+        width: 23vw;
+    }
+    .slider img:nth-child(2) {
+        position: absolute;
+        width: 4vw;
+        top: 1vw;
+        left: 1vw;
+        
+    }
+    /*slick setting*/
+    .slick-prev:before,
+    .slick-next:before {
+        color: #000;
+    }
+    /*コンセプト部分*/
+    .concept {
+        position: relative;
+        width: 100%;
+        background-color: #fbc300;
+    }
+    .video {
+        padding-top: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+        width: 85vw;
+    }
+    .video video {
+        width: 100%;
+        height: 90%;
+    }
+    
+    .concept-wrapper {
+        display: flex;
+        margin-top: 8vw;
+        width: 86%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .concept-content {
+        width: 50%;
+    }
+    /*フェードイン　jqueryのcss*/
+    .concept-wrapper {
+        /* 最初は非表示 */
+        transform: translateY(30px);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 1s, opacity 1s, visibility 1s;
+    }
+
+    .concept-wrapper:nth-child(2).is-fadein {
+        transition-delay: 1s;
+    }
+      
+    /* フェードイン時に入るクラス */
+    .is-fadein {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    /*終了*/
+    .concept-title p {
+        font-size: 2vw;
+        font-weight: 700;
+        margin-bottom: 1vw;
+    }
+    .concept-title h2 {
+        font-size: 2.5vw;
+        margin-bottom: 1.5vw;
+    }
+    .concept-text p {
+        font-size: 1.15vw;
+        font-weight: 550;
+        line-height: 2em;
+        margin-bottom: 5vw;
+    }
+    .concept-image {
+        width: 50%;
+    }
+    .concept-image img {
+        width: 100%;
+    }
+    .concept-bottom {
+        position: absolute;
+        top: 68vw;
+        z-index: -1;
+    }
+    
+    .concept-bottom img {
+        width: 100%;
+    }
+    /*ニュース部分*/
+    .news {
+        width: 86vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20vw;
+    }
+    .news h3 {
+        font-size: 2vw;
+        font-weight: 700;
+        margin-bottom: 3vw;
+    }
+    .news ul li {
+        display: flex;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+    .date-wrapper {
+        display: flex;
+    }
+    .date {
+        margin-left: 2vw;
+        margin-right: 1vw;
+        width: 4.5vw;
+        font-size: 1vw;
+    }
+    .news ul li a {
+        color: #000;
+        font-size: 1vw;
+        font-weight: 400;
+    }
+    .new-box {
+        background-color: #e3a101;
+        margin-right: 2vw;
+    }
+    .new-box p span {
+        color: #fff;
+        font-size: 0.71vw;
+        line-height: 1.6rem;
+        padding-left: 0.8vw;
+        padding-right: 0.8vw;
+    }
+    .news .more-btn {
+        position: relative;
+        overflow: hidden;
+        width: 10vw;
+        border-radius: 100px;
+        background-color: #fbc300;
+        margin-left: auto;
+        margin-right: 3vw;
+        margin-top: 3vw;
+        transition: .6s;
+        z-index: 1;
+    }
+    .news .more-btn::before {
+        content: "";
+        width: 100%;
+        height: 300%;
+        position: absolute;
+        top: -50%;
+        left: 0;
+        z-index: -1;
+        background-color: #fff;
+        border-radius: 70% 70% 50% 50% / 0% 0% 100% 100% ;
+        transform: translateY(-100%);
+        transition: transform ease .6s;
+    }
+    .news .more-btn:hover::before {
+        transform: translateY(10%);
+    }
+    .news .more-btn a {
+        text-decoration: none;
+    }
+    .news .more-btn p {
+        line-height: 3em;
+        color: #fff;
+        text-align: center;
+        font-size: 1.1vw;
+        font-weight: 600;
+    }
+    .news .more-btn:hover p {
+        color: #fbc300;
+    }
+    /*ショップ　インフォメーション部分*/
+    .info {
+        margin-top: 8vw;
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8vw;
+    }
+    .info h4 {
+        width: 9vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2vw;
+        font-weight: 700;
+    }
+    .info img {
+        width: 20vw;
+    }
+    .info-content {
+        display: flex;
+        width: 66vw;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5vw;
+    }
+    .info-text {
+        width: 60%;
+        margin-left: 10vw;
+    }
+    .info-address {
+        display: flex;
+    }
+    .address p {
+        font-size: 0.9vw;
+        margin-bottom: 0.5vw;
+    }
+    .info-address p {
+        font-size: 1.1vw;
+        font-weight: 600;
+        margin-bottom: 0.5vw;
+    }
+    .info-address p:nth-child(1) {
+        margin-right: 1.5vw;
+    }
+    .open-time {
+        display: flex;
+    }
+    .open-time p {
+        font-size: 1.1vw;
+        font-weight: 600;
+        color: #e3a101;
+    }
+    .open-time p:nth-child(1) {
+        margin-right: 1.5vw;
+    }
+    
+    /*フッター部分*/
+    footer {
+        background-color: #fbc300;
+        padding-bottom: 2vw;
+    }
+    .nav-wrapper {
+        display: flex;
+        width: 100%;
+        margin-bottom: 5vw;
+    }
+    
+    .footer-logo {
+        width: 17vw;
+        padding-top: 3.5vw;
+        padding-left: 6.5vw;
+    }
+    .footer-logo a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    footer nav {
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: 6.5vw;
+    }
+    footer nav ul {
+        display: flex;
+    }
+    footer nav ul li {
+        list-style-type: none;
+    }
+    footer nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.3vw;
+        font-weight: 600;
+        margin-right: 2vw;
+    }
+    footer nav ul li a img {
+        width: 1.6vw;
+    }
+    footer nav ul li a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    footer p small {
+        margin-left: 6.5vw;
+    }
+}
