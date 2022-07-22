@@ -1,0 +1,447 @@
+@charset "UTF-8";
+/*ウィンドウ幅が481px-900pxの場合に適用するCSS*/
+@media screen and (min-width:481px) and (max-width:900px)
+{
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #f6efd8;
+    }
+    header {
+        overflow: hidden;
+    }
+    .top-nav {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(255,255,255,0.3);
+        padding-bottom: 1vw;
+        z-index: 100;
+    }
+    
+    .top-logo {
+        width: 17vw;
+        padding-top: 3.5vw;
+        padding-left: 6.5vw;
+    }
+    .top-logo a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    /*ハンバーガーメニュー消す*/
+    .hamburger-menu {
+        display: none;
+    }
+    .insta {
+        display: none;
+    }
+    /*終了*/
+    header nav {
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: 5vw;
+    }
+    header nav ul {
+        display: flex;
+    }
+    header nav ul li {
+        list-style-type: none;
+    }
+    header nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-size: 2vw;
+        font-weight: 600;
+        margin-right: 2vw;
+    }
+    header nav ul li a img {
+        width: 1.6vw;
+    }
+    header nav ul li a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    
+    /*メイン　メニュー表*/
+    .main-menu {
+        position: relative;
+        margin-top: 15vw;
+        overflow: hidden;
+    }
+    .main-menu h1 {
+        text-align: center;
+        font-size: 5vw;
+    }
+    .cheese-logo {
+        position: absolute;
+        top: 1vw;
+        z-index: -1;
+        display: flex;
+        height: 9vw;
+        transition: 0.5s;
+    }
+    .cheese-logo img {
+        height: 100%;
+    }
+    
+    .main-menu ul {
+        display: flex;
+        width: 9vw;
+        list-style-type: none;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: 6vw;
+    }
+    .main-menu ul li {
+        width: 2vw;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.7vw;
+        margin-left: 0.5vw;
+    }
+    .main-menu ul li a {
+        text-decoration: none;
+    }
+    .main-menu ul li a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    .main-menu ul li a img {
+        width: 1.8vw;
+        vertical-align: middle;
+        margin-bottom: 0.3vw;
+    }
+    
+    /*メニュー　ハンバーガー*/
+    .menu-wrapper {
+        margin-top: 1vw;
+    }
+    .menu-content:nth-child(1) {
+        display: flex;
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .menu-content:nth-child(2) {
+        display: flex;
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+    .menu-content:nth-child(3) {
+        width: 24vw;
+        margin-left: 7vw;
+    }
+    .menu-content:nth-child(3) .menu-box {
+        width: 25.4vw;
+    }
+    .menu-content:nth-child(3) .menu-box img {
+        width: 100%;
+    }
+    .menu-box:nth-child(2) {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+    .menu-box {
+        width: 30vw;
+    }
+    .menu-box img {
+        width: 100%;
+    }
+    .menu-title {
+        display: flex;
+        margin-bottom: 1vw;
+    }
+    .menu-title p strong {
+        font-size: 1.7vw;
+    }
+    .menu-title p:nth-child(2) {
+        font-size: 1.8vw;
+        font-weight: 600;
+        margin-left: auto;
+    }
+    .menu-text p {
+        font-size: 1.6vw;
+        font-weight: 500;
+    }
+    .menu-option {
+        display: flex;
+        border-top: 0.2vw solid #fbc300;
+        border-bottom: 0.2vw solid #fbc300;
+        margin-top: 1vw;
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+    }
+    .menu-option p strong {
+        font-size: 1.7vw;
+    }
+    .menu-option p:nth-child(2) {
+        font-size: 1.8vw;
+        font-weight: 600;
+        margin-left: auto;
+    }
+    
+    /*サブメニュー部分*/
+    .option-wrapper {
+        display: flex;
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vw;
+    }
+    .option-box {
+        position: relative;
+        height: 7.8vw;
+        width: 41vw;
+        display: flex;
+        border: 0.7vw solid #fbc300;
+        border-radius: 10px;
+    }
+    .option-box:nth-child(1){
+        margin-right: 2vw;
+    }
+    .option-box h2 {
+        font-size: 1.6vw;
+        margin-left: 12vw;
+        line-height: 5em;
+    }
+    .option-box img {
+        position: absolute;
+        bottom: -0.7vw;
+        left: -0.1vw;
+        width: 10.4vw;
+    }
+    .option-text {
+        width: 38vw;
+        display: flex;
+    }
+    .option-text p {
+        font-size: 2vw;
+        font-weight: 600;
+        line-height: 3.8em;
+        margin-left: auto;
+    }
+    /*飲み物・ポテト 画像部分*/
+    .set-menu {
+        width: 85vw;
+        margin-top: 4vw;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+    }
+    .image-box {
+        width: 49%;
+        display: flex;
+    }
+    .set-image:nth-child(1) {
+        margin-right: 1vw;
+    }
+    .set-image img {
+        width: 100%;
+    }
+    .set-image p {
+        font-size: 1.6vw;
+        font-weight: 600;
+        margin-top: 0.5vw;
+    }
+    .set-image p:nth-child(3) {
+        font-size: 2vw;
+    }
+    /*飲み物・ポテトメニュー表*/
+    .set-text {
+        width: 49%;
+        margin-left: 2vw;
+        margin-top: 1.5vw;
+    }
+    .set-text li {
+        border-top: 0.15vw solid #fbc300;
+        display: flex;
+        list-style-type: none;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+    }
+    .set-text li:last-child {
+        border-bottom: 0.15vw solid #fbc300;
+    }
+    .set-text p {
+        font-size: 1.6vw;
+        font-weight: 600;
+    }
+    .set-text p:nth-child(2) {
+        font-size: 2vw;
+        margin-right: 1vw;
+        margin-left: auto;
+    }
+    
+    /*アレルギー情報*/
+    .information {
+        display: flex;
+        width: 81vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8vw;
+    }
+    .more-btn {
+        position: relative;
+        overflow: hidden;
+        width: 25vw;
+        border-radius: 100px;
+        background-color: #fff;
+        transition: .6s;
+        z-index: 1;
+    }
+    .more-btn:nth-child(2) {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+    .more-btn::before {
+        content: "";
+        width: 100%;
+        height: 300%;
+        position: absolute;
+        top: -50%;
+        left: 0;
+        z-index: -1;
+        background-color: #fbc300;
+        border-radius: 70% 70% 50% 50% / 0% 0% 100% 100% ;
+        transform: translateY(-100%);
+        transition: transform ease .6s;
+    }
+    .more-btn:hover::before {
+        transform: translateY(10%);
+    }
+    .more-btn a {
+        text-decoration: none;
+    }
+    .more-btn p {
+        line-height: 4em;
+        color: #fbc300;
+        text-align: center;
+        font-size: 1.6vw;
+        font-weight: 600;
+    }
+    .more-btn:hover p {
+        color: #fff;
+    }
+    
+    /*ショップ　インフォメーション部分*/
+    .info {
+        margin-top: 8vw;
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8vw;
+    }
+    .info h4 {
+        width: 13vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+    .info img {
+        display: block;
+        width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5vw;
+    }
+    .info-content {
+        display: block;
+        width: 66vw;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5vw;
+    }
+    .info-text {
+        width: 57vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .info-address {
+        display: flex;
+    }
+    .address p {
+        font-size: 1.5vw;
+        margin-bottom: 0.5vw;
+    }
+    .info-address p {
+        font-size: 1.6vw;
+        font-weight: 600;
+        margin-bottom: 0.5vw;
+    }
+    .info-address p:nth-child(1) {
+        margin-right: 5vw;
+    }
+    .open-time {
+        display: flex;
+    }
+    .open-time p {
+        font-size: 1.6vw;
+        font-weight: 600;
+        color: #e3a101;
+    }
+    .open-time p:nth-child(1) {
+        margin-right: 5vw;
+    }
+    
+    /*フッター部分*/
+    footer {
+        background-color: #fbc300;
+        padding-bottom: 2vw;
+    }
+    .nav-wrapper {
+        display: flex;
+        width: 100%;
+        margin-bottom: 5vw;
+    }
+    
+    .footer-logo {
+        width: 17vw;
+        padding-top: 3.5vw;
+        padding-left: 6.5vw;
+    }
+    .footer-logo a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    footer nav {
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: 6.5vw;
+    }
+    footer nav ul {
+        display: flex;
+    }
+    footer nav ul li {
+        list-style-type: none;
+    }
+    footer nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-size: 2vw;
+        font-weight: 600;
+        margin-right: 2vw;
+    }
+    footer nav ul li a img {
+        width: 1.6vw;
+    }
+    footer nav ul li a:hover {
+        opacity: 0.6;
+        transition: 0.3s;
+    }
+    footer p small {
+        margin-left: 6.5vw;
+    }
+    
+}
+
